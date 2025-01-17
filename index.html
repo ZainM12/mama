@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mama</title>
+</head>
+<body>
+    <h1 id="h">hello mamaa</h1>
+
+    <button id="but">click!</button>
+
+    <h1 id="zainn"></h1>
+    
+    <script>
+        var num = 1;
+
+        document.getElementById("but").onclick = function() {
+            if (num === 1) {
+                document.getElementById("h").textContent = "hello";
+                num++;
+            } 
+            else if (num === 2) {
+                document.getElementById("h").textContent = "hello mama";
+                num++;
+            } 
+            else if (num === 3) {
+                document.getElementById("h").textContent = "are you fine?";
+                var input = document.createElement("input");
+                input.id = "zain";
+                input.placeholder = "Type your answer here...";
+                document.body.appendChild(input);
+                
+                var submitButton = document.createElement("button");
+                submitButton.textContent = "Submit";
+                submitButton.id = "submitBtn";
+                document.body.appendChild(submitButton);
+
+                submitButton.onclick = function() {
+                    var inputValue = document.getElementById("zain").value.trim().toLowerCase();
+                    if (inputValue === "fine") {
+                        document.getElementById("h").textContent = "ok";
+                        document.getElementById("zainn").textContent = "ok bye bye";
+
+                        window.location.href = "https://youtu.be/sNtFWoCGv6Q";
+                    } else {
+                        document.getElementById("h").textContent = "😣😣";
+                        window.location.href = "https://youtu.be/sNtFWoCGv6Q";
+                    }
+                };
+                num++; // Ensure no further input boxes are added
+            }
+        };
+    </script>
+</body>
+</html>
